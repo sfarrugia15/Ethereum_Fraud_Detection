@@ -57,7 +57,7 @@ Total Number of Available documented scam addresses: 692 (19/02/2019)
 Link: https://raw.githubusercontent.com/MyEtherWallet/ethereum-lists/master/src/addresses/addresses-darklist.json
 """
 def get_additional_scam_addresses():
-    address_darklist = json.loads(open('C:/Users/luter/Documents/Github/Ethereum_Fraud_Detection/illegal_lists/addresses-darklist.json').read())
+    address_darklist = json.loads(open('C:/Users/luter/Documents/Github/Ethereum_Fraud_Detection/Etherlists_And_Stats/illegal_lists/addresses-darklist.json').read())
     print("Number of illegal addresses: ", len(address_darklist))
     addresses, comments, date = ([] for i in range(3))
     for item in address_darklist:
@@ -74,7 +74,7 @@ Total Number of Available documented scam URLs: 2370 (19/02/2019)
 Link: https://raw.githubusercontent.com/MyEtherWallet/ethereum-lists/master/src/urls/urls-darklist.json
 """
 def get_additional_scam_websites():
-    url_darklist = json.loads(open('C:/Users/luter/Documents/Github/Ethereum_Fraud_Detection/illegal_lists/urls-darklist.json', encoding="utf8").read())
+    url_darklist = json.loads(open('C:/Users/luter/Documents/Github/Ethereum_Fraud_Detection/Etherlists_And_Stats/illegal_lists/urls-darklist.json', encoding="utf8").read())
     print("Number of illegal addresses: ", len(url_darklist))
     url, comments = ([] for i in range(2))
     for item in url_darklist:
@@ -101,7 +101,7 @@ Link: https://github.com/corpetty/py-etherscan-api/blob/master/examples/contract
 """
 def get_Last_Ether_Price_Supply():
     from etherscan.stats import Stats
-    with open("api_key.json", mode='r') as key_file:
+    with open("Etherlists_And_Stats/api_key.json", mode='r') as key_file:
         key = json.loads(key_file.read())['key']
 
     api = Stats(api_key=key)
