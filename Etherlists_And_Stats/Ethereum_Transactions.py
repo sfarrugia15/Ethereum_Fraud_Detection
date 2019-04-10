@@ -4,67 +4,50 @@
 import datetime
 import json
 import requests
-
+import numpy as np
 
 """
 Scope: Get all documented scams using etherscamDB API
 Method Info: Parse response as json file and retain relevant fields on which analysis shall be carried out
-Total Number of Available documented scams: 6434 (19/02/2019)
 """
-def get_scams():
+def get_illicit_account_addresses():
+    # Total Number of Available documented scams: 6434 (19/02/2019)
+    # Total Number of Available documented scams: 6563 (08/04/2019)
     response = requests.get("https://etherscamdb.info/api/scams/")
     if response.status_code == 200:
         response = response.json()
-        print(response['result'][0]['name'])
         no_of_scams = len(response['result'])
-        scam_id, scam_name, scam_status, scam_category = ([] for i in range(4))
+        scam_id, scam_name, scam_status, scam_category, addresses= ([] for i in range(5))
 
         for scam in range(no_of_scams):
-            scam_id.append(response['result'][scam]['id'])
-            scam_name.append(response['result'][scam]['name'])
-            scam_status.append(response['result'][scam]['status'])
-            # if 'category' not in response['result'][scam]:
-            #     scam_category.append(response['result'][scam]['category'])
-            # else:
-            #     scam_category.append('Null')
-            # print (response['result'][scam]['category'])
+            if 'addresses' in response['result'][scam]:
+                for i in response['result'][scam]['addresses']:
+                    addresses.append(i)
+                    scam_id.append(response['result'][scam]['id'])
+                    scam_name.append(response['result'][scam]['name'])
+                    scam_status.append(response['result'][scam]['status'])
+                    if 'category' in response['result'][scam]:
+                        scam_category.append(response['result'][scam]['category'])
+                    else:
+                        scam_category.append('Null')
+        print("file number of illicit accounts: ", len(addresses))
+        print("Unique illicit accounts: ", len(np.unique(addresses)))
 
-    print(scam_id[1], " ", scam_name[1], " ", scam_status[1])
+        # Total Number of Available documented scam addresses: 692 (19/02/2019)
+        # JSON File
+        address_darklist = json.loads(open('C:/Users/luter/Documents/Github/Ethereum_Fraud_Detection/Etherlists_And_Stats/illegal_lists/addresses-darklist.json').read())
+        addresses_2 = []
+        for item in address_darklist:
+            addresses_2.append(item['address'])
+        print("Number of illegal addresses: ", len(address_darklist))
+        print("Number of unique illegal addresses in JSON file: ", len(np.unique(addresses_2)))
 
+        all_addresses = []
+        all_addresses = np.concatenate((addresses, addresses_2), axis=None)
+        all_addresses = np.unique(all_addresses)
+        print("Final number of unique Addresses: ", len(np.unique(all_addresses)))
+        return all_addresses
 
-"""
-Scope: Get all documented addresses from EtherscamDB API
-Method Info: Parse response as json file and retain addresses and scam IDs
-Total Number of Available documented scam addresses: 1988 (19/02/2019)
-"""
-def get_scam_addresses():
-    response = requests.get("https://etherscamdb.info/api/addresses/")
-    if response.status_code == 200:
-        response = response.json()
-        scam_id, scam_address = ([] for i in range(2))
-
-        for scam in response['result']:
-            scam_address.append(scam)
-            scam_id.append(response['result'][scam]['id'])
-
-        print(scam_address[0], ' ', scam_id[0])
-
-
-"""
-Scope: Additional documented scam/illicit behavior addresses
-Method Info: Parse local json file and return as array
-Total Number of Available documented scam addresses: 692 (19/02/2019) 
-Link: https://raw.githubusercontent.com/MyEtherWallet/ethereum-lists/master/src/addresses/addresses-darklist.json
-"""
-def get_additional_scam_addresses():
-    address_darklist = json.loads(open('C:/Users/luter/Documents/Github/Ethereum_Fraud_Detection/Etherlists_And_Stats/illegal_lists/addresses-darklist.json').read())
-    print("Number of illegal addresses: ", len(address_darklist))
-    addresses, comments, date = ([] for i in range(3))
-    for item in address_darklist:
-        addresses.append(item['address'])
-        comments.append(item['comment'])
-        date.append(item['date'])
-    print(addresses[0], " ", comments[0], " ", date[0])
 
 
 """
@@ -82,16 +65,6 @@ def get_additional_scam_websites():
         comments.append(item['comment'])
     print(url[0], " ", comments[0])
 
-
-"""
-Scope: Get verified source code from Etherscan using API key 
-Method Info: Generate request to retrieve source code for verified contracts from etherscan
-API Key: "1BDEBF8IZY2H7ENVHPX6II5ZHEBIJ8V33N"
-Link: https://raw.githubusercontent.com/MyEtherWallet/ethereum-lists/master/src/urls/urls-darklist.json
-"""
-def get_Transactions():
-    #https: // api.etherscan.io / api?module = contract & action = getsourcecode & address = 0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413 & apikey = YourApiKeyToken
-    return 0
 
 """
 Scope: Get Current Ether Price and supply in terms of USD from etherscan
@@ -121,11 +94,9 @@ def convertTimestampToDateTime(timestampValue):
     return exct_time
 
 def main():
-    get_scams()
-    get_scam_addresses()
-    get_additional_scam_addresses()
-    get_additional_scam_websites()
-    get_Last_Ether_Price_Supply()
+    addresses = get_illicit_account_addresses()
+    #get_additional_scam_websites()
+    #get_Last_Ether_Price_Supply()
 
 if __name__ == '__main__':
     main()
