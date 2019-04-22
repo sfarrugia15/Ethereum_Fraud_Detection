@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb411c89-70ca-4557-8cdd-23bad161d87a" name="Default Changelist" comment="Parsing and retrieval of scams and addresses from EtherscamDB using API">
-      <change afterPath="$PROJECT_DIR$/Account_Stats/Generate_Fields.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/XGBoost_Model/Final_XGBoost_Model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Etherlists_And_Stats/Ethereum_Transactions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Etherlists_And_Stats/api_key.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Etherlists_And_Stats/illegal_lists/addresses-darklist.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Etherlists_And_Stats/illegal_lists/urls-darklist.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neo4j_Connection/Neo4j_Stats.py" beforeDir="false" />
-    </list>
+    <list default="true" id="bb411c89-70ca-4557-8cdd-23bad161d87a" name="Default Changelist" comment="Parsing and retrieval of scams and addresses from EtherscamDB using API" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/XGBoost_Model/Final_XGBoost_Model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="60" column="30" lean-forward="true" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+            <state relative-caret-position="495">
+              <caret line="45" column="86" lean-forward="true" selection-start-line="45" selection-start-column="86" selection-end-line="45" selection-end-column="86" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -380,7 +371,7 @@
       <workItem from="1555572149589" duration="13103000" />
       <workItem from="1555653357020" duration="5007000" />
       <workItem from="1555705617401" duration="34080000" />
-      <workItem from="1555920021603" duration="15325000" />
+      <workItem from="1555920021603" duration="16061000" />
     </task>
     <task id="LOCAL-00001" summary="Parsing and retrieval of scams and addresses from EtherscamDB using API">
       <created>1550585695053</created>
@@ -393,7 +384,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206638000" />
+    <option name="totallyTimeSpent" value="207374000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -546,8 +537,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/XGBoost_Model/Final_XGBoost_Model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="60" column="30" lean-forward="true" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+        <state relative-caret-position="495">
+          <caret line="45" column="86" lean-forward="true" selection-start-line="45" selection-start-column="86" selection-end-line="45" selection-end-column="86" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

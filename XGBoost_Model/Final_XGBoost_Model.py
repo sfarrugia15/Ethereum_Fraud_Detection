@@ -5,20 +5,8 @@ from sklearn.metrics import accuracy_score, classification_report
 import xgboost as xgb
 import matplotlib.pyplot as plt
 
-# # fit model no training data
-# model = XGBClassifier()
-# model.fit(X_train, y_train)
-# # make predictions for test data
-# y_pred = model.predict(X_test)
-# predictions = [round(value) for value in y_pred]
-# # evaluate predictions
-# accuracy = accuracy_score(y_test, predictions)
-# print("Accuracy: %.2f%%" % (accuracy * 100.0))
-
 
 def XGBoost(X, Y):
-
-
     seed = 7
     test_size = 0.2
 
@@ -69,9 +57,7 @@ def get_normal_account_addresses():
     X.pop(' ERC20 uniq sent token name')
     X.pop(' ERC20 uniq rec token name')
 
-    #print(list(X))
     X.fillna(0, inplace=True)
-    #print(Y.head(10))
     return X, Y
 
 
