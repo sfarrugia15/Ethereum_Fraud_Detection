@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb411c89-70ca-4557-8cdd-23bad161d87a" name="Default Changelist" comment="Parsing and retrieval of scams and addresses from EtherscamDB using API">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/luter.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data_processing/TX.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data_processing/block.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Ethereum_Fraud_Detection.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Ethereum_Fraud_Detection.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Account_Stats/Generate_Fields.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/XGBoost_Model/Final_XGBoost_Model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Etherlists_And_Stats/Ethereum_Transactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Etherlists_And_Stats/Ethereum_Transactions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neo4j_Connection/Neo4j_Stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/Neo4j_Connection/Neo4j_Stats.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Etherlists_And_Stats/Ethereum_Transactions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Etherlists_And_Stats/api_key.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Etherlists_And_Stats/illegal_lists/addresses-darklist.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Etherlists_And_Stats/illegal_lists/urls-darklist.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neo4j_Connection/Neo4j_Stats.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,17 +18,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Ethereum_Transactions.coverage" NAME="Ethereum_Transactions Coverage Results" MODIFIED="1554804830834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Ethereum_Transactions.coverage" NAME="Ethereum_Transactions Coverage Results" MODIFIED="1555153506228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Process_Transaction_Data.coverage" NAME="Process_Transaction_Data Coverage Results" MODIFIED="1554022810875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Data_processing" />
-    <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Neo4j_Stats.coverage" NAME="Neo4j_Stats Coverage Results" MODIFIED="1554891430250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Neo4j_Connection" />
+    <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Generate_Fields.coverage" NAME="Generate_Fields Coverage Results" MODIFIED="1555839093936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Account_Stats" />
+    <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Neo4j_Stats.coverage" NAME="Neo4j_Stats Coverage Results" MODIFIED="1555656641440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Neo4j_Connection" />
+    <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Final_XGBoost_Model.coverage" NAME="Final_XGBoost_Model Coverage Results" MODIFIED="1555948140586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/XGBoost_Model" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Etherlists_And_Stats/Ethereum_Transactions.py">
+        <entry file="file://$PROJECT_DIR$/Illicit_Accounts/Get_Illicit_Accounts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1920">
-              <caret line="96" column="47" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
+            <state relative-caret-position="320">
+              <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
               <folding>
                 <element signature="e#310#325#0" expanded="true" />
               </folding>
@@ -37,38 +39,62 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Etherlists_And_Stats/illegal_lists/urls-darklist.json">
+        <entry file="file://$PROJECT_DIR$/Illicit_Accounts/illegal_lists/urls-darklist.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="1" selection-start-column="1" selection-end-column="1" />
+            <state relative-caret-position="380">
+              <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Etherlists_And_Stats/illegal_lists/addresses-darklist.json">
+        <entry file="file://$PROJECT_DIR$/Account_Stats/test.csv">
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+          <provider selected="true" editor-type-id="csv-text-editor">
+            <state relative-caret-position="-43340">
+              <caret line="4" column="415" selection-start-line="4" selection-start-column="415" selection-end-line="4" selection-end-column="415" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Account_Stats/Generate_Fields.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+            <state relative-caret-position="610">
+              <caret line="164" column="61" selection-start-line="164" selection-start-column="61" selection-end-line="164" selection-end-column="61" />
+              <folding>
+                <element signature="e#105#134#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Neo4j_Connection/Neo4j_Stats.py">
+        <entry file="file://$PROJECT_DIR$/XGBoost_Model/Final_XGBoost_Model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+            <state relative-caret-position="555">
+              <caret line="60" column="30" lean-forward="true" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
               <folding>
-                <element signature="e#105#130#0" expanded="true" />
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Data_processing/TX.csv">
-          <provider selected="true" editor-type-id="LargeFileEditor" />
+        <entry file="file://$PROJECT_DIR$/XGBoost_Model/ weight.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/sklearn/metrics/classification.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="1172" column="4" selection-start-line="1172" selection-start-column="4" selection-end-line="1172" selection-end-column="4" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -83,6 +109,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>0xcc02b920ae227f1be7d01fc241c27e5f74d40436</find>
+      <find>index</find>
+      <find>csv</find>
+      <find>decode</find>
+      <find>123p19mfiadep9bofckagsaetwsoxt2qal</find>
+      <find>try</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -93,16 +124,22 @@
       <list>
         <option value="$PROJECT_DIR$/Ethereum_Transactions.py" />
         <option value="$PROJECT_DIR$/Data_processing/Process_Transaction_Data.py" />
-        <option value="$PROJECT_DIR$/Etherlists_And_Stats/Ethereum_Transactions.py" />
+        <option value="$PROJECT_DIR$/Neo4j_Connection/test.csv" />
         <option value="$PROJECT_DIR$/Neo4j_Connection/Neo4j_Stats.py" />
+        <option value="$PROJECT_DIR$/Etherlists_And_Stats/Ethereum_Transactions.py" />
+        <option value="$PROJECT_DIR$/Neo4j_Connection/Generate_Fields.py" />
+        <option value="$PROJECT_DIR$/Illicit_Accounts/Get_Illicit_Accounts.py" />
+        <option value="$PROJECT_DIR$/Account_Stats/Generate_Fields.py" />
+        <option value="$PROJECT_DIR$/Account_Stats/test.csv" />
+        <option value="$PROJECT_DIR$/XGBoost_Model/Final_XGBoost_Model.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="2450" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="974" />
+    <option name="height" value="568" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -120,23 +157,28 @@
             <path>
               <item name="Ethereum_Fraud_Detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="Ethereum_Fraud_Detection" type="462c0819:PsiDirectoryNode" />
+              <item name="Account_Stats" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ethereum_Fraud_Detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ethereum_Fraud_Detection" type="462c0819:PsiDirectoryNode" />
               <item name="Data_processing" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Ethereum_Fraud_Detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="Ethereum_Fraud_Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="Etherlists_And_Stats" type="462c0819:PsiDirectoryNode" />
+              <item name="Illicit_Accounts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Ethereum_Fraud_Detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="Ethereum_Fraud_Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="Etherlists_And_Stats" type="462c0819:PsiDirectoryNode" />
+              <item name="Illicit_Accounts" type="462c0819:PsiDirectoryNode" />
               <item name="illegal_lists" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Ethereum_Fraud_Detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="Ethereum_Fraud_Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="Neo4j_Connection" type="462c0819:PsiDirectoryNode" />
+              <item name="XGBoost_Model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -152,12 +194,13 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\luter\Documents\Github\Ethereum_Fraud_Detection\Data_processing" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\luter\Documents\Github\Ethereum_Fraud_Detection\Neo4j_Connection" />
       <recent name="C:\Users\luter\Documents\Github\Ethereum_Fraud_Detection\Data_processing" />
       <recent name="C:\Users\luter\Documents\Github\Ethereum_Fraud_Detection\Etherlists_And_Stats" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\luter\Documents\Github\Ethereum_Fraud_Detection\Data_processing" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -172,7 +215,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Neo4j_Stats">
+  <component name="RunManager" selected="Python.Final_XGBoost_Model">
     <configuration name="Ethereum_Transactions" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Ethereum_Fraud_Detection" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -186,7 +229,51 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\luter\Documents\Github\Ethereum_Fraud_Detection\Etherlists_And_Stats\Ethereum_Transactions.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\luter\Documents\Github\Ethereum_Fraud_Detection\Etherlists_And_Stats\Get_Illicit_Accounts.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Final_XGBoost_Model" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Ethereum_Fraud_Detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/XGBoost_Model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/XGBoost_Model/Final_XGBoost_Model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Generate_Fields" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Ethereum_Fraud_Detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Account_Stats" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Account_Stats/Generate_Fields.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -208,7 +295,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Neo4j_Connection/Neo4j_Stats.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\luter\Documents\Github\Ethereum_Fraud_Detection\Neo4j_Connection\Generate_Fields.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -241,6 +328,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Final_XGBoost_Model" />
+        <item itemvalue="Python.Generate_Fields" />
         <item itemvalue="Python.Neo4j_Stats" />
         <item itemvalue="Python.Ethereum_Transactions" />
         <item itemvalue="Python.Process_Transaction_Data" />
@@ -278,7 +367,20 @@
       <workItem from="1554711534958" duration="5000" />
       <workItem from="1554711697910" duration="17639000" />
       <workItem from="1554804226739" duration="10988000" />
-      <workItem from="1554830176277" duration="8008000" />
+      <workItem from="1554830176277" duration="12397000" />
+      <workItem from="1554965563956" duration="337000" />
+      <workItem from="1554994424320" duration="14985000" />
+      <workItem from="1555066056320" duration="1463000" />
+      <workItem from="1555067534733" duration="2093000" />
+      <workItem from="1555069720776" duration="10415000" />
+      <workItem from="1555151109517" duration="8792000" />
+      <workItem from="1555436247011" duration="650000" />
+      <workItem from="1555487947833" duration="1929000" />
+      <workItem from="1555497566931" duration="2285000" />
+      <workItem from="1555572149589" duration="13103000" />
+      <workItem from="1555653357020" duration="5007000" />
+      <workItem from="1555705617401" duration="34080000" />
+      <workItem from="1555920021603" duration="15325000" />
     </task>
     <task id="LOCAL-00001" summary="Parsing and retrieval of scams and addresses from EtherscamDB using API">
       <created>1550585695053</created>
@@ -291,33 +393,57 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91785000" />
+    <option name="totallyTimeSpent" value="206638000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17963752" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.120469086" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40411702" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30227518" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.33152762" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.34669557" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.8795309" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.120469086" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30227518" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.34669557" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.8795309" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -337,43 +463,93 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Data_processing/Sample_transactions.csv" />
     <entry file="file://$PROJECT_DIR$/Data_processing/Process_Transaction_Data.py" />
-    <entry file="file://$PROJECT_DIR$/Etherlists_And_Stats/api_key.json">
+    <entry file="file://$PROJECT_DIR$/Illicit_Accounts/api_key.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Etherlists_And_Stats/illegal_lists/urls-darklist.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Etherlists_And_Stats/illegal_lists/addresses-darklist.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/XGBoost_Model/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/Data_processing/TX_large.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Data_processing/TX.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="-6000" />
+      </provider>
       <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="LargeFileEditor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Etherlists_And_Stats/Ethereum_Transactions.py">
+    <entry file="file://$PROJECT_DIR$/Illicit_Accounts/illegal_lists/addresses-darklist.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="96" column="47" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
+        <state relative-caret-position="289">
+          <caret line="364" column="24" selection-start-line="364" selection-start-column="24" selection-end-line="364" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Account_Stats/test.csv___jb_tmp___" />
+    <entry file="file://$PROJECT_DIR$/Account_Stats/test.csv___jb_old___" />
+    <entry file="file://$PROJECT_DIR$/Illicit_Accounts/illegal_lists/urls-darklist.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XGBoost_Model/dump.raw.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-340">
+          <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Account_Stats/test.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-43340">
+          <caret line="4" column="415" selection-start-line="4" selection-start-column="415" selection-end-line="4" selection-end-column="415" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="83" lean-forward="true" selection-start-line="20" selection-start-column="83" selection-end-line="20" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/sklearn/metrics/classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1172" column="4" selection-start-line="1172" selection-start-column="4" selection-end-line="1172" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Account_Stats/Generate_Fields.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="164" column="61" selection-start-line="164" selection-start-column="61" selection-end-line="164" selection-end-column="61" />
+          <folding>
+            <element signature="e#105#134#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Illicit_Accounts/Get_Illicit_Accounts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
           <folding>
             <element signature="e#310#325#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Neo4j_Connection/Neo4j_Stats.py">
+    <entry file="file://$PROJECT_DIR$/XGBoost_Model/ weight.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XGBoost_Model/Final_XGBoost_Model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+        <state relative-caret-position="555">
+          <caret line="60" column="30" lean-forward="true" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
           <folding>
-            <element signature="e#105#130#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
