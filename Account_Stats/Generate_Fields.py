@@ -91,33 +91,45 @@ def get_normal_account_addresses():
     import pandas as pd
     csv_file = 'C:/Users/luter/Documents/Github/Ethereum_Fraud_Detection/Data_processing/TX.csv'
     df = pd.read_csv(csv_file)
-    senders = df.head(1900)
-    receivers = df.tail(1900)
+    senders = df.head(9000)
+    receivers = df.tail(9000)
     #saved_column = df.column_name  # you can also use df['column_name']
     s = np.unique(senders['s'].values)
     r = np.unique(receivers['r'].values)
     good_accounts = np.concatenate((s,r), axis=0)
-    return good_accounts
+    unique_good_accounts = np.unique(good_accounts)
+    print("Number of unique accounts: ", len(unique_good_accounts))
+    return unique_good_accounts
 
+# get new addresses which have not been retreived and saved from repository
+def check_new_illicit_accounts():
+    import pandas as pd
+    data = pd.read_csv("test.csv")
+    saved_addresses = data.loc[data['FLAG'] == 1]
+    saved_addresses = saved_addresses['Address']
+    up_to_date_illicit_addresses = get_illicit_account_addresses()
+    difference_between_saved_and_updated_list = list(set(saved_addresses) - set(up_to_date_illicit_addresses))
+    print(len(difference_between_saved_and_updated_list))
+    return difference_between_saved_and_updated_list
 
 def etherscanAPI():
     import csv
-    #list_of_illicit_addresses = get_illicit_account_addresses()
-    list_of_good_accounts = get_normal_account_addresses()
+    #Addresses = get_illicit_account_addresses()
+    Addresses = get_normal_account_addresses()
+    #Addresses = check_new_illicit_accounts()
 
     #addresses = list_of_illicit_addresses
-    addresses = list_of_good_accounts
+    addresses = Addresses[2934:]
     index = 1
     pbar = tqdm(total=len(addresses))
     for address in addresses:
 
-        normal_tnxs = normal_transactions(index, address)
-        #internal_tnxs = internal_transactions(address)
+        normal_tnxs = normal_transactions(index, address, flag=0)
         token_transfer_tnxs = token_transfer_transactions(address)
         try:
             all_tnxs = np.concatenate((normal_tnxs, token_transfer_tnxs), axis=None)
             #print(len(all_tnxs))
-            with open(r'test.csv', 'a', newline="") as f:
+            with open(r'new_normal_addresses.csv', 'a', newline="") as f:
                 writer = csv.writer(f, delimiter=',')
                 writer.writerow(all_tnxs)
             index += 1
@@ -228,7 +240,7 @@ def token_transfer_transactions(address):
                                      mostRecTokenType]
     return ERC20_contract_tnx_fields
 
-def normal_transactions(index, address):
+def normal_transactions(index, address, flag):
     URL = "https://api.etherscan.io/api?module=account&action=txlist&address={address}" \
           "&startblock=0&endblock=99999999&page=1&offset=100000&sort=asc&apikey=YourApiKeyToken".format(address=address)
 
@@ -281,9 +293,9 @@ def normal_transactions(index, address):
         minValSentContract, maxValSentContract, avgValSentContract = min_max_avg(valueSentContracts)
         timeDiffBetweenFirstAndLast = timeDiffFirstLast(timestamp)
 
-        ILLICIT_ACCOUNT_FLAG = 0
+        ILLICIT_OR_NORMAL_ACCOUNT_FLAG = flag
 
-        transaction_fields = [index, address, ILLICIT_ACCOUNT_FLAG ,avgTimeBetweenSentTnx, avgTimeBetweenRecTnx, timeDiffBetweenFirstAndLast,
+        transaction_fields = [index, address, ILLICIT_OR_NORMAL_ACCOUNT_FLAG ,avgTimeBetweenSentTnx, avgTimeBetweenRecTnx, timeDiffBetweenFirstAndLast,
                               sentTransactions,
                               receivedTransactions, createdContracts,
                               numUniqRecAddress, numUniqSentAddress,
@@ -334,4 +346,7 @@ if __name__ == '__main__':
     #illegal_addresses_neo4j()
     #test_only_accounts()
     #get_normal_account_addresses()
+
+    #RUN ETHERSCANAPI
     etherscanAPI()
+    #check_new_illicit_accounts()

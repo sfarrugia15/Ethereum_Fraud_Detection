@@ -10,6 +10,12 @@ import numpy as np
 Scope: Get all documented scams using etherscamDB API
 Method Info: Parse response as json file and retain relevant fields on which analysis shall be carried out
 """
+def get_number_of_illicit_addresses():
+    response = requests.get("https://etherscamdb.info/api/scams/")
+    response = response.json()
+    no_of_scams = len(response['result'])
+    print(no_of_scams)
+
 def get_illicit_account_addresses():
     from web3 import Web3
     # Total Number of Available documented scams: 6434 (19/02/2019)
@@ -96,6 +102,7 @@ def convertTimestampToDateTime(timestampValue):
     return exct_time
 
 def main():
+    #get_number_of_illicit_addresses()
     get_illicit_account_addresses()
     #get_additional_scam_websites()
     #get_Last_Ether_Price_Supply()
