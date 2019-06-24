@@ -87,6 +87,12 @@ def illegal_addresses_neo4j():
     with driver.session() as session:
         session.read_transaction(get_computed_fields_from_neo4j)
 
+
+def get_():
+    accounts = get_normal_account_addresses()
+
+
+
 def get_normal_account_addresses():
     import pandas as pd
     csv_file = 'C:/Users/luter/Documents/Github/Ethereum_Fraud_Detection/Data_processing/TX.csv'
@@ -138,6 +144,36 @@ def etherscanAPI():
             continue
 
     pbar.close()
+
+
+def account_balance(address):
+    url = "https://api.etherscan.io/api?module=account&action=balance&address={address}" \
+          "&tag=latest&apikey=YourApiKeyToken".format(address=address)
+
+    r = requests.get(url=url)
+    data = r.json()
+    balance = 0
+
+    if data['status'] != 0:
+        balance = int(data['result']) / 1000000000000000000
+
+    return balance
+
+
+def get_total_number_of_normal_transactions(address):
+
+    url = "http://api.etherscan.io/api?module=account&action=txlist&address={address}" \
+          "&startblock=0&endblock=99999999&sort=asc&apikey=YourApiKeyToken".format(address=address)
+    r = requests.get(url=url)
+    data = r.json()
+    num_normal_transactions = 0
+
+    if data['status'] != 0:
+        for tnx in range(len(data['result'])):
+            num_normal_transactions += 1
+
+    return num_normal_transactions
+
 
 
 def token_transfer_transactions(address):
@@ -322,7 +358,7 @@ def avgTime(timeDiff):
     return timeDifference
 
 def min_max_avg(value_array_tnxs):
-    minVal, maxVal, avgVal =  0, 0, 0
+    minVal, maxVal, avgVal = 0, 0, 0
     if value_array_tnxs:
         minVal = min(value_array_tnxs)
         maxVal = max(value_array_tnxs)
