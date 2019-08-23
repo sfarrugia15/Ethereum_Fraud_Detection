@@ -1,8 +1,11 @@
 import time
+from collections import Counter
+
 import numpy
 from matplotlib import pyplot
 from sklearn.model_selection import train_test_split, cross_val_score, cross_validate
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_auc_score
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_auc_score, \
+    precision_recall_curve
 import xgboost as xgb
 import shap
 from xgboost import plot_tree
@@ -21,10 +24,10 @@ def XGBoost_Classifier (X_train, y_train, X_test, y_test):
     model = xgb.XGBClassifier(max_depth=4,
                               subsample=0.5,
                               objective='binary:logistic',
-                              n_estimators=150,
+                              n_estimators=300,
                               learning_rate=0.2)
     eval_set = [(X_train, y_train), (X_test, y_test)]
-    model.fit(X_train, y_train, early_stopping_rounds=10, eval_metric=["error", "logloss"],
+    model.fit(X_train, y_train, early_stopping_rounds=100, eval_metric=["error", "logloss"],
               eval_set=eval_set, verbose=True)
 
     # make predictions for test data
@@ -35,16 +38,20 @@ def XGBoost_Classifier (X_train, y_train, X_test, y_test):
     accuracy = accuracy_score(y_test, predictions)
     print("Accuracy: %.2f%%" % (accuracy * 100.0))
 
+    plot_xgb_feature_importance(model, 2, 'weight', width=200, height=200)
+
     # retrieve performance metrics
     results = model.evals_result()
     epochs = len(results['validation_0']['error'])
     x_axis = range(0, epochs)
+    plt.rcParams.update({'font.size': 13})
     # plot log loss
     fig, ax = pyplot.subplots()
     ax.plot(x_axis, results['validation_0']['logloss'], label='Train')
     ax.plot(x_axis, results['validation_1']['logloss'], label='Test')
     ax.legend()
     pyplot.ylabel('Log Loss')
+    pyplot.xlabel('Number of iterations')
     pyplot.title('XGBoost Log Loss')
     pyplot.show()
     # plot classification error
@@ -53,14 +60,13 @@ def XGBoost_Classifier (X_train, y_train, X_test, y_test):
     ax.plot(x_axis, results['validation_1']['error'], label='Test')
     ax.legend()
     pyplot.ylabel('Classification Error')
+    pyplot.xlabel('Number of iterations')
     pyplot.title('XGBoost Classification Error')
     pyplot.show()
 
 def XGBoost(X_train, y_train, X_test, y_test):
-    model2 = xgb.XGBClassifier(n_estimators=250, max_depth=5, learning_rate=0.2, subsample=0.5, objective='binary:logistic')
-    #model2 = xgb.XGBClassifier(learning_rate=0.1, n_estimators=1000, max_depth=5, min_child_weight=1, gamma=0,
-    #                           subsample=0.8, colsample_bytree=0.8, objective='binary:logistic',
-    #                           scale_pos_weight=1, seed=27)
+    model2 = xgb.XGBClassifier(n_estimators=300, max_depth=4, learning_rate=0.2, subsample=0.5, objective='binary:logistic')
+
     X_train = X_train.loc[:, X_train.columns != 'Address']
     X_test_addresses = X_test['Address']
     X_test = X_test.loc[:, X_test.columns != 'Address']
@@ -68,15 +74,16 @@ def XGBoost(X_train, y_train, X_test, y_test):
 
     #train_model1 = model1.fit(X_train, y_train)
     train_model2 = model2.fit(X_train, y_train)
-    #pred1 = train_model1.predict(X_test)
     pred2 = train_model2.predict(X_test)
     #print(classification_report(y_test, pred1))
     #print("Accuracy for model 1: %.2f" % (accuracy_score(y_test, pred1) * 100))
 
     print(classification_report(y_test, pred2))
     print("Accuracy for model 2: %.2f" % (accuracy_score(y_test, pred2) * 100))
-    roc = roc_auc_score(y_test, model2.predict_proba(X_test)[:, 1])
-    print("ROC: " , roc)
+    auc = roc_auc_score(y_test, model2.predict_proba(X_test)[:, 1])
+    precision, recall, threshold = precision_recall_curve(y_test, model2.predict_proba(X_test)[:, 1])
+    #print(threshold)
+    print("ROC: " , auc)
     #print([i for i, j in zip(pred2, y_test) if i != j])
     index = 0
     FP = []
@@ -102,12 +109,7 @@ def XGBoost(X_train, y_train, X_test, y_test):
     # Gain - average training loss reduction gained when using a feature for splitting
 
     importance = model2.get_booster().get_score(importance_type='weight')
-    importance = sorted(importance.items())
-
-    #plot_xgb_feature_importance(train_model2, 1, 'weight', width=200, height=200)
-    #plot_xgb_feature_importance(train_model2, 2, 'cover',width=200, height=200)
-    #plot_xgb_feature_importance(train_model2, 3, 'gain', width=200, height=200)
-
+    importance = sorted(importance.items(), key= lambda l:l[1], reverse=True)
 
     # plot_tree(train_model2)
     # fig = plt.gcf()
@@ -116,19 +118,17 @@ def XGBoost(X_train, y_train, X_test, y_test):
     # results = cross_show()val_score(model2, X, Y)
     np.set_printoptions(precision=2)
 
-    explainer = shap.TreeExplainer(train_model2)
-    shap_values = explainer.shap_values(X_train)
-    print(np.shape(shap_values))
+    # explainer = shap.TreeExplainer(train_model2)
+    # shap_values = explainer.shap_values(X_train)
+    # print(np.shape(shap_values))
     #shap.force_plot(explainer.expected_value, shap_values[0, :], X_train.iloc[0, :])
 
     #shap.force_plot(explainer.expected_value, shap_values, X_train)
-    shap.summary_plot(shap_values, X_train, max_display=10,show=False)
-    fig = plt.gcf()
-    fig.set_size_inches(20,20)
-    fig.savefig('test.png')
-    #shap.summary_plot(shap_values, X_train, max_display=10, plot_type="bar")
-
-
+    # shap.summary_plot(shap_values, X_train, max_display=10,show=False)
+    # fig = plt.gcf()
+    # fig.set_size_inches(20,20)
+    # fig.savefig('test.png')
+    # #shap.summary_plot(shap_values, X_train, max_display=10, plot_type="bar")
 
     # Plot non-normalized confusion matrix
     # plot_confusion_matrix(y_test, pred2, classes=np.array(['Normal','Illicit']),
@@ -139,7 +139,7 @@ def XGBoost(X_train, y_train, X_test, y_test):
     #                       title='Normalized confusion matrix')
 
     # plt.show()
-
+    return importance
 
 def plot_FP_FN(FP,FN):
     import plotly.plotly as py
@@ -323,20 +323,51 @@ def get_dataset(filename):
     X.pop('ERC20_most_rec_token_type')
     X.pop('ERC20_uniq_sent_token_name')
     X.pop('ERC20_uniq_rec_token_name')
-    X.pop('Address')
+    #X.pop('Address')
 
     X.fillna(0, inplace=True)
     return X, Y
 
 def plot_xgb_feature_importance(model, model_number, importance_type, width, height):
     plt.figure(model_number)
-    xgb.plot_importance(model, importance_type=importance_type, max_num_features=10, show_values=False) #max_num_features=10
+    #plt.rcParams.update({'font.size': 15})
+    xgb.plot_importance(model, importance_type=importance_type, show_values=False,
+                        xlabel="Frequency") #max_num_features=10
     plt.rcParams['figure.figsize'] = [width, height]
     plt.tight_layout()
     plt.title(importance_type)
     plt.savefig(" "+importance_type)
     plt.show()
 
+# Returns the total frequency per feature over the number of folds
+def update_list(importance_value_list):
+    c = Counter()
+    for k,v in importance_value_list:
+        c[k] += v
+
+    # PLOT TOP 10
+    # feature_list = list(c.items())[:10]
+
+    # PLOT ALL
+    feature_list = list(c.items())
+
+    sorted_feature_list = sorted(feature_list.__iter__(), key=lambda x : x[1], reverse=False)
+    print(sorted_feature_list)
+
+    return sorted_feature_list
+
+
+def plot_average_importance_values(sorted_feature_list, num_of_train_test):
+
+    key, value = zip(*sorted_feature_list.__iter__())
+    value = [int(x / num_of_train_test) for x in value]
+    plt.rcParams.update({'font.size': 22})
+    plt.figure(figsize=(20, 10))
+    plt.barh(key, value)
+    plt.title('Feature importance ranking - Weight')
+    plt.xlabel('Frequency')
+    plt.ylabel('Features')
+    plt.show()
 
 if __name__ == '__main__':
     X, Y = get_dataset('C:/Users/luter/Documents/Github/Ethereum_Fraud_Detection/Account_Stats/Complete.csv')
@@ -345,12 +376,19 @@ if __name__ == '__main__':
     #X_diff, Y_diff = get_dataset('C:/Users/luter/Documents/Github/Ethereum_Fraud_Detection/Account_Stats/new_illicit_addresses.csv')
     #X_diff, Y_diff = get_dataset('C:/Users/luter/Documents/Github/Ethereum_Fraud_Detection/Account_Stats/Complete_Illicit_Subset_1000.csv')
     # stratified_k_fold_XGBoost(X, Y, n_folds=10)
-    for i in range(1):
+
+    importance_list = []
+    num_of_train_test_splits = 10
+    for i in range(num_of_train_test_splits):
         X_train, X_test, y_train, y_test = prepare_dataset_split(X, Y, testSize=0.1)
         #XGBoost(X_train, y_train, X_diff, Y_diff) # TO TEST NEWLY ADDED ADDRESSES
         #XGBoost(X_train, y_train, X_test, y_test)
-        XGBoost_Classifier(X_train, y_train, X_test, y_test)
-    #
+        importance = XGBoost(X_train, y_train, X_test, y_test)
+        importance_list.extend(importance)
+
+    sorted_feature_list = update_list(importance_list)
+    #plot_average_importance_values(sorted_feature_list, num_of_train_test_splits)
+
     #   random_forest(X_train,  y_train, X_test, y_test)
 
 

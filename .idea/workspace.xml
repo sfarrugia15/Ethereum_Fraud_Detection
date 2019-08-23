@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb411c89-70ca-4557-8cdd-23bad161d87a" name="Default Changelist" comment="Parsing and retrieval of scams and addresses from EtherscamDB using API">
-      <change afterPath="$PROJECT_DIR$/Account_Stats/Account_Clustering.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Account_Stats/Generate_Fields.py" beforeDir="false" afterPath="$PROJECT_DIR$/Account_Stats/Generate_Fields.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/XGBoost_Model/ cover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/XGBoost_Model/ gain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/XGBoost_Model/ weight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Account_Stats/Account_Clustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/Account_Stats/Account_Clustering.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/XGBoost_Model/Final_XGBoost_Model.py" beforeDir="false" afterPath="$PROJECT_DIR$/XGBoost_Model/Final_XGBoost_Model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XGBoost_Model/test.png" beforeDir="false" afterPath="$PROJECT_DIR$/XGBoost_Model/test.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,10 +17,10 @@
     <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Ethereum_Transactions.coverage" NAME="Ethereum_Transactions Coverage Results" MODIFIED="1555153506228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Process_Transaction_Data.coverage" NAME="Process_Transaction_Data Coverage Results" MODIFIED="1554022810875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Data_processing" />
     <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Generate_Fields.coverage" NAME="Generate_Fields Coverage Results" MODIFIED="1557217585973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Account_Stats" />
-    <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Account_Clustering.coverage" NAME="Account_Clustering Coverage Results" MODIFIED="1560198774363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Account_Stats" />
+    <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Account_Clustering.coverage" NAME="Account_Clustering Coverage Results" MODIFIED="1561642761014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Account_Stats" />
     <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Get_Illicit_Accounts.coverage" NAME="Get_Illicit_Accounts Coverage Results" MODIFIED="1556121453897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Illicit_Accounts" />
     <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Neo4j_Stats.coverage" NAME="Neo4j_Stats Coverage Results" MODIFIED="1555656641440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Neo4j_Connection" />
-    <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Final_XGBoost_Model.coverage" NAME="Final_XGBoost_Model Coverage Results" MODIFIED="1560435641818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/XGBoost_Model" />
+    <SUITE FILE_PATH="coverage/Ethereum_Fraud_Detection$Final_XGBoost_Model.coverage" NAME="Final_XGBoost_Model Coverage Results" MODIFIED="1563867519956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/XGBoost_Model" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -41,11 +38,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Account_Stats/Account_Clustering.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1160">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/seaborn/relational.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="26020">
+              <caret line="1318" column="4" selection-start-line="1318" selection-start-column="4" selection-end-line="1318" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/XGBoost_Model/Final_XGBoost_Model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+            <state relative-caret-position="755">
+              <caret line="385" column="59" selection-start-line="385" selection-start-column="59" selection-end-line="385" selection-end-column="59" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -54,19 +72,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/shap/plots/summary.py">
+        <entry file="file://$PROJECT_DIR$/XGBoost_Model/cover.jpg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/xgboost/sklearn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+            <state relative-caret-position="11920">
+              <caret line="607" selection-start-line="607" selection-end-line="607" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/matplotlib/pyplot.py">
+        <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/sklearn/metrics/ranking.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10440">
-              <caret line="571" column="4" selection-start-line="571" selection-start-column="4" selection-end-line="571" selection-end-column="4" />
+            <state relative-caret-position="4680">
+              <caret line="252" selection-start-line="252" selection-end-line="252" />
             </state>
           </provider>
         </entry>
@@ -74,20 +97,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/xgboost/plotting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4860">
-              <caret line="249" column="36" selection-start-line="249" selection-start-column="36" selection-end-line="249" selection-end-column="36" />
+            <state relative-caret-position="180">
+              <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Account_Stats/Account_Clustering.py">
+        <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/mpl_toolkits/mplot3d/axes3d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3120">
-              <caret line="164" selection-start-line="164" selection-end-line="164" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="44600">
+              <caret line="2252" column="8" selection-start-line="2252" selection-start-column="8" selection-end-line="2252" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -110,6 +130,7 @@
       <find>123p19mfiadep9bofckagsaetwsoxt2qal</find>
       <find>try</find>
       <find>min value received</find>
+      <find>sorted</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,12 +151,14 @@
         <option value="$PROJECT_DIR$/Account_Stats/new_normal_addresses.csv" />
         <option value="$PROJECT_DIR$/Account_Stats/Generate_Fields.py" />
         <option value="$PROJECT_DIR$/Account_Stats/Account_Clustering.py" />
+        <option value="$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/xgboost/plotting.py" />
         <option value="$PROJECT_DIR$/XGBoost_Model/Final_XGBoost_Model.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1934" />
     <option name="height" value="1047" />
   </component>
@@ -144,38 +167,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Ethereum_Fraud_Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ethereum_Fraud_Detection" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Ethereum_Fraud_Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ethereum_Fraud_Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="Account_Stats" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Ethereum_Fraud_Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ethereum_Fraud_Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="Data_processing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Ethereum_Fraud_Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ethereum_Fraud_Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="Illicit_Accounts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Ethereum_Fraud_Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Ethereum_Fraud_Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="XGBoost_Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -396,6 +389,18 @@
       <workItem from="1560249880834" duration="9289000" />
       <workItem from="1560627098148" duration="274000" />
       <workItem from="1561309670771" duration="481000" />
+      <workItem from="1561461132730" duration="2820000" />
+      <workItem from="1561553907868" duration="2238000" />
+      <workItem from="1561558175969" duration="4202000" />
+      <workItem from="1561641966520" duration="1208000" />
+      <workItem from="1561709510618" duration="7087000" />
+      <workItem from="1562488092966" duration="9210000" />
+      <workItem from="1562746902742" duration="625000" />
+      <workItem from="1562922656548" duration="2800000" />
+      <workItem from="1563866548577" duration="1910000" />
+      <workItem from="1564387572024" duration="9000" />
+      <workItem from="1565953441759" duration="7000" />
+      <workItem from="1566067939415" duration="621000" />
     </task>
     <task id="LOCAL-00001" summary="Parsing and retrieval of scams and addresses from EtherscamDB using API">
       <created>1550585695053</created>
@@ -408,17 +413,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="407395000" />
+    <option name="totallyTimeSpent" value="440132000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14765458" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23294243" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4595186" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.60780066" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -432,7 +438,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.092750534" />
+      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.19402985" />
       <window_info anchor="right" id="Database" order="4" weight="0.32977587" />
     </layout>
     <layout-to-restore>
@@ -467,16 +473,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Parsing and retrieval of scams and addresses from EtherscamDB using API" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data_processing/Sample_transactions.csv" />
-    <entry file="file://$PROJECT_DIR$/Data_processing/Process_Transaction_Data.py" />
     <entry file="file://$PROJECT_DIR$/Illicit_Accounts/api_key.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -500,11 +496,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Account_Stats/test_1600.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state>
-          <caret line="607" selection-start-line="607" selection-end-line="607" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="20" column="83" lean-forward="true" selection-start-line="20" selection-start-column="83" selection-end-line="20" selection-end-column="105" />
@@ -512,6 +503,11 @@
       </provider>
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state>
+          <caret line="607" selection-start-line="607" selection-end-line="607" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/xgboost/core.py">
@@ -522,12 +518,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Account_Stats/Complete_Illicit_Subset_600.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Account_Stats/test_1000.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
@@ -583,13 +573,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/XGBoost_Model/n_estimators_vs_max_depth_10_fold.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/mpl_toolkits/mplot3d/axes3d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="2277" lean-forward="true" selection-start-line="2277" selection-end-line="2277" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Account_Stats/Complete_large.csv">
       <provider editor-type-id="csv-table-editor">
@@ -648,13 +631,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/XGBoost_Model/weight.jpg" />
     <entry file="file://$PROJECT_DIR$/XGBoost_Model/max_depth.png" />
-    <entry file="file://$PROJECT_DIR$/XGBoost_Model/cover.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/XGBoost_Model/gain.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/XGBoost_Model/ weight.png" />
     <entry file="file://$PROJECT_DIR$/XGBoost_Model/tree_0_saved">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -666,6 +645,13 @@
     <entry file="file://$PROJECT_DIR$/XGBoost_Model/test.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/matplotlib/pyplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10440">
+          <caret line="571" column="4" selection-start-line="571" selection-start-column="4" selection-end-line="571" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Account_Stats/Complete.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
@@ -676,16 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/XGBoost_Model/Final_XGBoost_Model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/shap/plots/summary.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -693,26 +669,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/matplotlib/pyplot.py">
+    <entry file="file://$PROJECT_DIR$/Account_Stats/test_1000.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Account_Stats/test.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XGBoost_Model/ cover.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XGBoost_Model/ weight.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Account_Stats/Account_Clustering.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10440">
-          <caret line="571" column="4" selection-start-line="571" selection-start-column="4" selection-end-line="571" selection-end-column="4" />
+        <state relative-caret-position="1160">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/seaborn/relational.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26020">
+          <caret line="1318" column="4" selection-start-line="1318" selection-start-column="4" selection-end-line="1318" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XGBoost_Model/cover.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/xgboost/sklearn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11920">
+          <caret line="607" selection-start-line="607" selection-end-line="607" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/sklearn/metrics/ranking.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4680">
+          <caret line="252" selection-start-line="252" selection-end-line="252" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/xgboost/plotting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4860">
-          <caret line="249" column="36" selection-start-line="249" selection-start-column="36" selection-end-line="249" selection-end-column="36" />
+        <state relative-caret-position="180">
+          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Account_Stats/Account_Clustering.py">
+    <entry file="file://$PROJECT_DIR$/../EthereumDB/venv/Lib/site-packages/mpl_toolkits/mplot3d/axes3d.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3120">
-          <caret line="164" selection-start-line="164" selection-end-line="164" />
+        <state relative-caret-position="44600">
+          <caret line="2252" column="8" selection-start-line="2252" selection-start-column="8" selection-end-line="2252" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XGBoost_Model/Final_XGBoost_Model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="755">
+          <caret line="385" column="59" selection-start-line="385" selection-start-column="59" selection-end-line="385" selection-end-column="59" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
